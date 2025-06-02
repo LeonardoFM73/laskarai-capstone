@@ -141,7 +141,8 @@ age_bin = bin_age(age)
 # Simpan data input dari user ke dalam DataFrame
 df_stroke = pd.DataFrame([[age_bin, gender_encoded, ses_encoded, high_bp_encoded, heart_disease_encoded, bmi, avg_glucose, diabetes_encoded, smoking_status_encoded]], columns=KOLOM_STROKE)
 df_jantung = pd.DataFrame([[general_health_encoded, high_bp_encoded, age_bin, diabetes_encoded, high_chol_encoded, smoker_encoded, gender_encoded, any_healthcare_encoded]], columns=KOLOM_JANTUNG)
-df_diabetes = pd.DataFrame([[age_bin, high_chol, bmi, general_health, difficulty_walk, high_bp]], columns=KOLOM_DIABETES)
+df_diabetes = pd.DataFrame([[age_bin, high_chol_encoded, bmi, general_health_encoded, difficulty_walk_encoded, high_bp_encoded]], columns=KOLOM_DIABETES)
+print([age_bin, high_chol_encoded, bmi, general_health_encoded, difficulty_walk_encoded, high_bp_encoded])
 
 
 # ==========================================================
@@ -185,7 +186,7 @@ if submit:
             # Load 3 model ML
             model_stroke = joblib.load('export-model/stroke_rf_bayes_model_smote.pkl')
             model_jantung = joblib.load('export-model/lr_jantung_smoteenn.pkl')
-            model_diabetes = joblib.load('export-model/Deteksi_diabetes_NN.pkl')
+            model_diabetes = joblib.load('export-model/Deteksi_diabetes_NN2(1).pkl')
 
             # Prediksi
             prediksi_stroke = model_stroke.predict(df_stroke)
