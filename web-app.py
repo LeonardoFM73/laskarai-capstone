@@ -185,7 +185,7 @@ if submit:
             # Load 3 model ML
             model_stroke = joblib.load('export-model/stroke_rf_bayes_model_smote.pkl')
             model_jantung = joblib.load('export-model/lr_jantung_smoteenn.pkl')
-            model_diabetes = joblib.load('export-model/Deteksi_diabetes_NN (1).pkl')
+            model_diabetes = joblib.load('export-model/Deteksi_diabetes_NN2(1).pkl')
 
             # Prediksi
             prediksi_stroke = model_stroke.predict(df_stroke)
